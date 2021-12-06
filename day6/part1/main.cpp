@@ -56,7 +56,7 @@ void iterate(std::map<int, int>& lanternfish_cycles, int num_cycles) {
 }
 
 int get_total_lanternfish(std::map<int, int>& lanternfish_cycles) {
-  int count;
+  int count = 0;
   
   for (auto iter = lanternfish_cycles.begin(); iter != lanternfish_cycles.end(); ++iter) {
     count += iter->second;
@@ -70,3 +70,4 @@ void print_cycles(std::map<int, int>& lanternfish_cycles) {
     std::cout << iter->first << " days: " << iter->second << std::endl; 
   }
 }
+  
