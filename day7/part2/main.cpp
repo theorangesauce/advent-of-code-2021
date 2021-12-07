@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-int geometric_sum(int magnitude, std::map<int, int>& lookup_table);
+int get_triangle_number(int magnitude, std::map<int, int>& lookup_table);
 
 int main() {
   std::string input;
@@ -30,7 +30,7 @@ int main() {
   std::map<int, int> sum_lookup_table;
 
   for (std::size_t i = 0; i < power_usage.at(0).size(); i++) {
-    power_usage.at(0).at(i) = geometric_sum(abs((int)i - position_list.at(0)), sum_lookup_table);
+    power_usage.at(0).at(i) = get_triangle_number(abs((int)i - position_list.at(0)), sum_lookup_table);
   }
 
   int smallest_value = 0;
@@ -42,7 +42,7 @@ int main() {
     int row_smallest_value = -1;
 
     for (std::size_t j = 0; j < current_row.size(); j++) {
-      current_row.at(j) = previous_row.at(j) + geometric_sum(abs((int)j - crab_position), sum_lookup_table);
+      current_row.at(j) = previous_row.at(j) + get_triangle_number(abs((int)j - crab_position), sum_lookup_table);
 
       if (row_smallest_value == -1 || current_row.at(j) < row_smallest_value) {
 	row_smallest_value = current_row.at(j);
@@ -58,7 +58,7 @@ int main() {
 }
 
 
-int geometric_sum(int magnitude, std::map<int, int>& lookup_table) {
+int get_triangle_number(int magnitude, std::map<int, int>& lookup_table) {
   if (lookup_table.find(magnitude) != lookup_table.end()) {
     return lookup_table.find(magnitude)->second;
   }
