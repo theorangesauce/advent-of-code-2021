@@ -1,0 +1,101 @@
+After C1
+x = z mod 26 + 12, cannot equal w so x = 1;
+z = 0
+z = C1 + 7
+
+After C2
+x = z mod 26  + 11 = z + 11, cannot equal w so x = 1
+z *= 26 (25 * x + 1)
+z += C2 + 15
+
+After C3
+x = z mod 26 + 12, cannot equal w so x = 1
+z *= 26
+z += C3 + 2
+
+After C4
+x = z mod 26 - 3, CAN EQUAL C3 + 2
+if equal then z *= 1
+z += 0;
+
+After C5
+x = z mod 26 + 10, cannot equal w so x = 1
+z *= 26
+z += C5 + 14
+
+After C6
+x = z mod 26 - 9, Can Equal
+z *= 1
+z += 0
+
+After C7
+x = z mod 26 + 10, cannot equal w so x = 1
+z *= 26
+z += C7 + 15
+
+After C8
+x = z mod 26 - 7, CAN EQUAL
+Z *= 1
+Z += 0
+
+After C9
+x = z mod 26 - 11, CAN EQUAL
+z *= 1
+Z += 0
+
+After C10
+x = z mod 26 - 4, CAN EQUAL
+z *= 1
+z += 0
+
+After C11
+x = z mod 26 + 14, cannot equal w so x = 1
+z *= 26
+z += C11 + 12
+
+After C12
+x = z mod 26 + 11, cannot equal w so x = 1
+z *= 26
+z += C12 + 2
+
+After C13
+x = z mod 26 - 8, CAN EQUAL
+z *= 1
+z += 0
+
+After C14
+x = z mod 26 - 10, CAN EQUAL
+Z *= 1
+z += 0
+
+stack:
+c1 + 7 (c1 + 3 = c10) [c1 + 7 - 4 = c10]
+c2 + 15 (c2 + 4 = c9) [c2 + 15 - 11 = c9]
+c3 + 2  (c3 - 1 = c4) [c3 + 2 - 3 = c4]
+c5 + 14 (c5 + 5 = c6) [c5 + 14 - 9 = c6]
+c7 + 15 (c7 + 8 = c8) [c7 + 15 - 7 = c8]
+c11 + 12 (c11 + 2 = c14) [c11 + 12 - 10 = c14]
+c12 + 2 (c12 - 6 = c13) [c12 + 2 - 8 = c13]
+
+c1 + 3 = c10
+c2 + 4 = c9
+c3 - 1 = c4
+c5 + 5 = c6
+c7 + 8 = c8
+c11 + 2 = c14
+c12 - 6 = c13
+
+c1 = 1
+c2 = 1
+c3 = 2
+c4 = 1
+c5 = 1
+c6 = 6
+c7 = 1
+c8 = 9
+c9 = 5
+c10 = 4
+c11 = 1
+c12 = 7
+c13 = 1
+c14 = 3
